@@ -18,4 +18,20 @@
 
 $(document).ready(function(){
   $('.parallax').parallax();
+
+  geoip2.city(function(data){
+    var city = data.city.names.en,
+        select = $('#state');
+    $.ajax('/states/index')
+      .done(function(data){
+        $.each(data, function (index, option) {
+          if(option.name === city){
+            select.append('<option value="'+option.id+'" selected="selected">'+option.name+'</option>');
+          } else {
+            select.append('<option value="'+option.id+'">'+option.name+'</option>')
+          }
+        });
+        $('select').material_select();
+      });
+  });
 });
