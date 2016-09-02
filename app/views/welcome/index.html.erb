@@ -21,35 +21,42 @@
           </button>
         </div>
       </div>
-      <div class="row" id="search-results">
-        <div class="col l4 m12" style="">
-          <div>
-            <div class="col l12 m6 s6" style="padding:10px; height: 100px;">
-              <div style="padding: 10px; color:white; text-align:center; background-color:#33aaff">
-                <small>State Average salary</small>
-                <p id="state-average" style="font-size: 20px;"></p>
+      <div id="search-results">
+        <div class="row">
+          <div class="col l4 m12" style="">
+            <div>
+              <div class="col l12 m6 s6" style="padding:10px; height: 100px;">
+                <div style="padding: 10px; color:white; text-align:center; background-color:#33aaff">
+                  <small>State Average salary</small>
+                  <p class="state-average" style="font-size: 20px;"></p>
+                </div>
               </div>
-            </div>
-            <div class="col l12 m6 s6" style="padding:10px; height: 100px">
-              <div style="padding: 10px; text-align:center; background-color:#eeeeee">
-                <small>National Average salary</small>
-                <p id="national-average" style="font-size: 20px;"></p>
+              <div class="col l12 m6 s6" style="padding:10px; height: 100px">
+                <div style="padding: 10px; text-align:center; background-color:#eeeeee">
+                  <small>National Average salary</small>
+                  <p class="national-average" style="font-size: 20px;"></p>
+                </div>
               </div>
             </div>
           </div>
+          <div class="col l8 m12" style="">
+            <div style="height: 200px; " id="country-map"></div>
+          </div>
         </div>
-        <div class="col l8 m12" style="">
-          <div style="height: 200px; " id="country-map"></div>
+        <div class="row">
+          <br /><br />
+          <div class="col l9">
+            <small>How much does <strong class="profession-name-with-article"></strong> make in <strong class="state-name"></strong>?</small>
+            <p>
+              The average salary for <strong class="profession-name-with-article"></strong> in <strong class="state-name"></strong> is <strong class="state-average"></strong>. That is <strong class="percentage-diff"></strong> <strong class="difference-qualifier"></strong> than the national median salary of <strong class="national-average"></strong>. Salary estimates are based on <strong class="profession-name"></strong> salaries.
+            </p>
+          </div>
+          <div class="col l3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col l9">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-        <div class="col l3">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
-      </div>
+
     </div>
   </div>
 </div>
