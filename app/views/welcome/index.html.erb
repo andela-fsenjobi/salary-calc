@@ -17,7 +17,7 @@
         </div>
         <div class="input-field col l3 s12">
           <button class="btn btn-lg" id="calculate">
-            Calculate
+            View Salary
           </button>
         </div>
       </div>
@@ -27,7 +27,7 @@
             <div>
               <div class="col l12 m6 s6" style="padding:10px; height: 100px;">
                 <div style="padding: 10px; color:white; text-align:center; background-color:#33aaff">
-                  <small>State Average salary</small>
+                  <small><span class="state-name"></span> Average salary</small>
                   <p class="state-average" style="font-size: 20px;"></p>
                 </div>
               </div>
@@ -45,15 +45,13 @@
         </div>
         <div class="row">
           <br /><br />
-          <div class="col l9">
+          <div class="col l8">
             <small>How much does <strong class="profession-name-with-article"></strong> make in <strong class="state-name"></strong>?</small>
             <p>
               The average salary for <strong class="profession-name-with-article"></strong> in <strong class="state-name"></strong> is <strong class="state-average"></strong>. That is <strong class="percentage-diff"></strong> <strong class="difference-qualifier"></strong> than the national median salary of <strong class="national-average"></strong>. Salary estimates are based on <strong class="profession-name"></strong> salaries.
             </p>
           </div>
-          <div class="col l3">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </div>
+          <div class="col l4" id="chart"></div>
         </div>
       </div>
 

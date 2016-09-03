@@ -17,7 +17,7 @@ group :development, :test do
   gem 'capybara'
   gem 'pry-rails'
   gem 'shoulda-matchers'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '2.53.4'
 end
 
 group :development do

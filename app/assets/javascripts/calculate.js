@@ -13,30 +13,41 @@ $(document).ready(function(){
     if (title != '') {
       $.ajax('/welcome/calculate/?state=' + state + '&title=' + title)
       .done(function (data) {
-        $('.state-average').html('$ ' + parseInt(data.state_average).format(2));
-        $('.national-average').html('$ ' + parseInt(data.national_average).format(2));
-        generateMap(data.state_name);
-        $('.profession-name').html(data.plural_title);
-        $('.profession-name-with-article').html(data.title_name_with_article);
-        $('.percentage-diff').html(percentageDiff(data.state_average, data.national_average) + '%');
-        $('.difference-qualifier').html(higherOrLower(data.state_average, data.national_average));
-        $('.state-name').html(data.state_name);
-        $('#search-results').show();
+        data.status === "fail" ? notify(data.message) : showResults(data)
       });
     } else {
-      Materialize.toast("Please fill in a Job Title", 3000);
+      notify("Please fill in a Job Title")
     }
   })
 });
 
+function showResults(data) {
+  var stateAverage =  parseInt(data.state_average),
+      nationalAverage = parseInt(data.national_average),
+      percentageDifference = percentageDiff(stateAverage, nationalAverage),
+      differenceQualifier = higherOrLower(stateAverage, nationalAverage);
+
+  $('.state-average').html('$ ' + stateAverage.format(2));
+  $('.national-average').html('$ ' + nationalAverage.format(2));
+  $('.profession-name').html(data.plural_title);
+  $('.profession-name-with-article').html(data.title_name_with_article);
+  $('.percentage-diff').html(percentageDifference + '%');
+  $('.difference-qualifier').html(differenceQualifier);
+  $('.state-name').html(data.state_name);
+  
+  generateMap(data.state_name);
+  buildChart([stateAverage, nationalAverage], [percentageDifference, differenceQualifier]);
+  $('#search-results').show();
+}
+
 function percentageDiff(stateAverage, nationalAverage) {
-  stateAverage = parseInt(stateAverage);
-  nationalAverage = parseInt(nationalAverage);
   return Math.abs((100 * (stateAverage - nationalAverage)/nationalAverage).format(2));
 }
 
 function higherOrLower(stateAverage, nationalAverage) {
-  stateAverage = parseInt(stateAverage);
-  nationalAverage = parseInt(nationalAverage);
   return stateAverage > nationalAverage ? "higher" : "lower";
+}
+
+function notify(message) {
+  Materialize.toast(message, 3000);
 }
