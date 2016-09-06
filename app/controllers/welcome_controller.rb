@@ -16,12 +16,11 @@ class WelcomeController < ApplicationController
         title_name_with_article: data[:title].singularize.indefinitize,
         singular_title: data[:title].singularize,
         plural_title: data[:title].pluralize,
-      }
+      }, status: :ok
     else
       render json: {
         message: "No data was found for the job title: #{data[:title]}",
-        status: "fail"
-      }
+      }, status: :unprocessable_entity
     end
   end
 

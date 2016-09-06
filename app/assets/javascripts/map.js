@@ -24,12 +24,12 @@
         .style("stroke-width", "1")
         .style("fill", function(d) {
 
-        var name = d.properties.NAME;
-        if (name === city) {
-          return "rgb(255,0,0)";
-        } else {
-          return "rgb(213,222,217)";
-        }
+          var name = d.properties.NAME;
+          if (name === city) {
+            return "rgb(255,0,0)";
+          } else {
+            return "#666666";
+          }
 
       });
     });

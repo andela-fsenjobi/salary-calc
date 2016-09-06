@@ -13,8 +13,11 @@ $(document).ready(function(){
     if (title != '') {
       $.ajax('/welcome/calculate/?state=' + state + '&title=' + title)
       .done(function (data) {
-        data.status === "fail" ? notify(data.message) : showResults(data)
-      });
+        showResults(data)
+      })
+      .fail(function (err, data) {
+        notify(data.message)
+      })
     } else {
       notify("Please fill in a Job Title")
     }
@@ -34,7 +37,7 @@ function showResults(data) {
   $('.percentage-diff').html(percentageDifference + '%');
   $('.difference-qualifier').html(differenceQualifier);
   $('.state-name').html(data.state_name);
-  
+
   generateMap(data.state_name);
   buildChart([stateAverage, nationalAverage], [percentageDifference, differenceQualifier]);
   $('#search-results').show();
