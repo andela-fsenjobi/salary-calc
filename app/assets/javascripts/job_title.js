@@ -28,4 +28,8 @@ $(document).ready(function(){
     $('#job-title').val(text);
     $('#auto-suggest-title').hide();
   });
+
+  $('#job-title').on('focusout', function () {
+    $('#auto-suggest-title').hide();
+  });
 });
