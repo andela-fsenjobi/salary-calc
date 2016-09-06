@@ -29,7 +29,7 @@ $(document).ready(function(){
     $('#auto-suggest-title').hide();
   });
 
-  $('#job-title').on('focusout', function () {
+  $('#state-input').on('focusin', function () {
     $('#auto-suggest-title').hide();
   });
 });

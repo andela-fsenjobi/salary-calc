@@ -5,7 +5,8 @@ class JobTitleController < ApplicationController
   end
 
   private
-    def search_params
-      params.permit(:q)[:q]
-    end
+
+  def search_params
+    params.permit(:q)[:q]
+  end
 end
