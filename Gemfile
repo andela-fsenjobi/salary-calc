@@ -15,6 +15,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem "rspec-rails"
   gem "capybara"
+  gem 'shoulda-matchers'
+  gem 'selenium-webdriver'
 end
 
 group :development do
