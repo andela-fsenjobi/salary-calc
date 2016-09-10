@@ -7,9 +7,9 @@ function generateImage(callback) {
 }
 
 function downloadImage() {
-    generateImage(function(img) {
-      var imgageData = img.toDataURL("image/png");
-      var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
-      window.location = newData;
-    });
+  generateImage(function(img) {
+    var imgageData = img.toDataURL("image/png");
+    // var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+    return imgageData;
+  });
 }

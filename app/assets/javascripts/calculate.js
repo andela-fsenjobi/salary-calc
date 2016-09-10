@@ -15,13 +15,20 @@ $(document).ready(function(){
       .done(function (data) {
         showResults(data)
       })
-      .fail(function (err, data) {
-        notify(data.message)
+      .fail(function (data) {
+        notify(JSON.parse(data.responseText).message);
       })
     } else {
       notify("Please fill in a Job Title")
     }
-  })
+
+    $('.element').socialShare({
+        description     : $('#social-text').text().trim(),
+        image           : downloadImage(),
+        twitterVia	   	: 'gustohq',
+        twitterHashTags : 'salary,withGusto'
+    });
+  });
 });
 
 function showResults(data) {
